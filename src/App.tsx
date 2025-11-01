@@ -67,7 +67,7 @@ function App() {
         </thead>
         <tbody>
           {elements
-            .filter((element) => element.name.includes(filter))
+            .filter((element) => element.name.includes(filter.toLowerCase()))
             .map((element) => (
               <ElementField key={element.number} element={element} />
             ))}
