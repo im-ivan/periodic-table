@@ -46,7 +46,7 @@ export const ChemicalElement = ({ element, bgOpacity = 0.6 }: IChemicalElementPr
       />
 
       {/* Conteúdo em cima da imagem */}
-      <div className={`${formatCategory} ${categoryColor} relative z-10 flex flex-col items-center justify-center w-full h-full text-center p-1`}>
+      <div className={`${formatedCategory} ${categoryColor} relative z-10 flex flex-col items-center justify-center w-full h-full text-center p-1`}>
         <h5 className="atomicNumber self-start text-xs">{element.number}</h5>
         <h4 className="symbol text-lg font-bold">{element.symbol}</h4>
         <h5 className="atomicMass text-xs">{element.atomic_mass}</h5>
