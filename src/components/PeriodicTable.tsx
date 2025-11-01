@@ -7,6 +7,7 @@ const elementsList: IElement[] = data.map((e: IElement) => {
     symbol: e.symbol,
     atomic_mass: Number(e.atomic_mass.toFixed(3)),
     number: e.number,
+    category: e.category
   };
 });
 

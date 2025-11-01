@@ -6,7 +6,33 @@ export interface IChemicalElementProps {
   bgOpacity?: number; // opcional, permite ajustar a opacidade da imagem
 }
 
-export const ChemicalElement = ({ element, bgOpacity = 0.5 }: IChemicalElementProps) => {
+export const categoryColors: Record<string, string> = {
+  "actinide": "bg-indigo-200/30",
+  "alkali-metal": "bg-red-200/30",
+  "alkaline-earth-metal": "bg-yellow-200/30",
+  "nonmetal": "bg-green-200/30",
+  "lanthanide": "bg-orange-200",
+  "metalloid": "bg-purple-200",
+  "noble-gas": "bg-blue-200",
+  "metal": "bg-gray-300",
+  "halogen": "bg-pink-200",
+  "post-transition-metal": "bg-red-400",
+  "transition-metal": "bg-gray-200",
+  "unknown": "bg-orange-400/30"
+};
+const formatCategory = (category: string): string => {
+  if (category.includes("nonmetal")) {
+    return "nonmetal";
+  } else if (category.includes("unknown")) {
+    return "unknown";
+  } else {
+    return category.replace(/ /g, "-"); // substitui todos os espaços por "-"
+  }
+};
+
+export const ChemicalElement = ({ element, bgOpacity = 0.6 }: IChemicalElementProps) => {
+  const formatedCategory = formatCategory(element.category)
+  const categoryColor = categoryColors[formatedCategory] || ""
   return (
     <div className="relative size-20 flex flex-col items-center justify-center  overflow-hidden">
 
@@ -20,7 +46,7 @@ export const ChemicalElement = ({ element, bgOpacity = 0.5 }: IChemicalElementPr
       />
 
       {/* Conteúdo em cima da imagem */}
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center p-1">
+      <div className={`${formatCategory} ${categoryColor} relative z-10 flex flex-col items-center justify-center w-full h-full text-center p-1`}>
         <h5 className="atomicNumber self-start text-xs">{element.number}</h5>
         <h4 className="symbol text-lg font-bold">{element.symbol}</h4>
         <h5 className="atomicMass text-xs">{element.atomic_mass}</h5>
