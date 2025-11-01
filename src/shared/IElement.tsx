@@ -1,5 +1,5 @@
 export interface IElement {
   symbol: string;
-  atomicMass: number;
-  atomicNumber: number;
+  atomic_mass: number;
+  number: number;
 }
