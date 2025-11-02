@@ -3,4 +3,6 @@ export interface IElement {
   atomic_mass: number;
   number: number;
   category: string
+  xpos: number
+  ypos: number
 }

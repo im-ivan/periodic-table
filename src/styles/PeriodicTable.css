@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr); 
+    grid-template-rows: repeat(10, 1fr);
+    max-width: 1200px;
+    aspect-ratio: 1.8 / 1;
+    width: auto;
+    height: auto;
+}
+
+.element-container {
+    margin: 0;
+}
