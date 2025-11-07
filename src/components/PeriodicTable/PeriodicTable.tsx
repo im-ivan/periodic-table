@@ -21,7 +21,7 @@ export const PeriodicTable = () => {
         <h1 className="text-center text-[4rem] text-white">Tabela Periódica</h1>
         <div className="grid-container mx-auto">
           {elementsList.map((e: IElement) => (
-            <div style={{ gridRowStart: `${e.ypos}`, gridColumnStart: `${e.xpos}` }} className="element-container">
+            <div key={e.symbol} data-testid="chemical-element-container" style={{ gridRowStart: `${e.ypos}`, gridColumnStart: `${e.xpos}` }} className="element-container">
               <ChemicalElement key={e.symbol} element={e} />
             </div>
           ))}

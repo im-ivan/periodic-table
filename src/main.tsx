@@ -5,5 +5,5 @@ import App from "./App.tsx";
 import { PeriodicTable } from "./components/PeriodicTable/PeriodicTable.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>{/* <App /> */ <PeriodicTable />}</StrictMode>
+  <StrictMode> <App />  <PeriodicTable /></StrictMode>
 );
