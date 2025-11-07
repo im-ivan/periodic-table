@@ -1,30 +1,27 @@
 import type { IElement } from "../../shared/IElement"
+import { Accordion, AccordionPanel, AccordionTitle, AccordionContent } from "flowbite-react";
+
 
 interface IElementDetailsProps {
     element: IElement | null
 }
 
-export const ElementDetailsSidebar = ({ element }: IElementDetailsProps) => {
-
-    return <>
-        <div className="min-w-80 h-screen bg-amber-700">
-            <h3>{element?.name}</h3>
-            <h3>{element?.symbol}</h3>
-            <h3>{element?.number}</h3>
-            <h3>Period</h3>
-            <h3>group</h3>
-            <h3>phase</h3>
-            <h3>electron configuration</h3>
-            <h3>Atomic mass</h3>
-            <h3>boil</h3>
-            <h3>density</h3>
-            <h3>category</h3>
-            <h3>melt</h3>
-            <h3>molarheat</h3>
-            <h3>named by</h3>
-            <h3>discovered</h3>
-            <h3>isotopes</h3>
-            <h3>abundance</h3>
-        </div>
-    </>
-}
+export const ElementDetailsSidebar = ({ element }: IElementDetailsProps) => (
+    <div className="">
+        <Accordion alwaysOpen={false}>
+            <AccordionPanel>
+                <AccordionTitle>
+                    Detalhes do elemento
+                </AccordionTitle>
+                <AccordionContent className="p-0">
+                    <div className="bg-amber-400">
+                        <h3 className="text-center text-xl">{element?.name}</h3>
+                        <h3 className="text-6xl text-center"> {element?.symbol}</h3>
+                        <h3>Atomic number: {element?.number}</h3>
+                        <h3>Atomic mass: {element?.atomic_mass}</h3>
+                    </div>
+                </AccordionContent>
+            </AccordionPanel>
+        </Accordion>
+    </div>
+);

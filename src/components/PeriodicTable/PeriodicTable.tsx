@@ -25,8 +25,8 @@ export const PeriodicTable = ({ onElementClick }: IPeriodicTableProps) => {
   }
   return (
     <>
-      <div className="h-screen">
-        <h1 className="text-center text-[4rem] text-white">Tabela Periódica</h1>
+      <div className="">
+        {/* <h1 className="text-center text-[4rem] text-white">Tabela Periódica</h1> */}
         <div className="grid-container mx-auto">
           {elementsList.map((e: IElement) => (
             <div key={e.symbol} data-testid="chemical-element-container" style={{ gridRowStart: `${e.ypos}`, gridColumnStart: `${e.xpos}` }} className="element-container box-border border-2 border-transparent hover:border-cyan-500" onClick={() => handleElementClick(e)}>

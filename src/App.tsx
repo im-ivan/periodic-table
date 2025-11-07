@@ -8,8 +8,10 @@ function App() {
   const [selectedElement, setSelectedElement] = useState<IElement | null>(null)
   return (
     <>
-      <ElementDetailsSidebar element={selectedElement} />
-      <PeriodicTable onElementClick={setSelectedElement} />
+      <div className="h-screen main-container">
+        <ElementDetailsSidebar element={selectedElement} />
+        <PeriodicTable onElementClick={setSelectedElement} />
+      </div>
     </>
   );
 }
