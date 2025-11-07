@@ -1,7 +1,7 @@
-import { ChemicalElement } from "./ChemicalElement";
-import { elements as data } from "./../assets/data/periodic-table-elements.json";
-import type { IElement } from "../shared/IElement";
-import "../styles/PeriodicTable.css";
+import { ChemicalElement } from "../ChemicalElement/ChemicalElement";
+import { elements as data } from "../../assets/data/periodic-table-elements.json";
+import type { IElement } from "../../shared/IElement";
+import "./PeriodicTable.css";
 
 const elementsList: IElement[] = data.map((e: IElement) => {
   return {
@@ -17,7 +17,7 @@ const elementsList: IElement[] = data.map((e: IElement) => {
 export const PeriodicTable = () => {
   return (
     <>
-      <div className="h-[100vh]">
+      <div className="h-screen">
         <h1 className="text-center text-[4rem] text-white">Tabela Periódica</h1>
         <div className="grid-container mx-auto">
           {elementsList.map((e: IElement) => (

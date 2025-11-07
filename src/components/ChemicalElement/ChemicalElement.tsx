@@ -1,5 +1,5 @@
-import type { IElement } from "../shared/IElement";
-import elementbg from "../assets/img/elementbg.jpg";
+import type { IElement } from "../../shared/IElement";
+import elementbg from "../../assets/img/elementbg.jpg";
 
 export interface IChemicalElementProps {
   element: IElement;
@@ -26,7 +26,7 @@ const formatCategory = (category: string): string => {
   } else if (category.includes("unknown")) {
     return "unknown";
   } else {
-    return category.replace(/ /g, "-"); // substitui todos os espaços por "-"
+    return category.replace(/ /g, "-");
   }
 };
 
@@ -34,7 +34,7 @@ export const ChemicalElement = ({ element, bgOpacity = 0.6 }: IChemicalElementPr
   const formatedCategory = formatCategory(element.category)
   const categoryColor = categoryColors[formatedCategory] || ""
   return (
-    <div className="relative min-w-[4px] min-h-[4px] flex flex-col items-center justify-center  overflow-hidden">
+    <div className="relative min-w-1 min-h-1 flex flex-col items-center justify-center  overflow-hidden">
 
       {/* Imagem de fundo com opacidade */}
       <div
